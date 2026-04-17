@@ -1,0 +1,204 @@
+/* =========================
+   HRLN Tours & Travels CSS (style.css)
+   ========================= */
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  --primary:#0D1B2A;
+  --secondary:#C9A96E;
+  --light:#F5ECD7;
+  --white:#ffffff;
+  --text:#333;
+  --radius:14px;
+}
+
+body{
+  font-family:'Cormorant Garamond', serif;
+  color:var(--text);
+  line-height:1.6;
+}
+
+h1,h2,h3{
+  font-family:'Playfair Display', serif;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:var(--primary);
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  position:relative;
+}
+
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  background:var(--secondary);
+  bottom:-6px;
+  left:0;
+  transition:0.3s;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+.btn{
+  background:var(--secondary);
+  padding:10px 20px;
+  border:none;
+  border-radius:var(--radius);
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  opacity:0.85;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  background:url('https://picsum.photos/1600/900?travel') no-repeat center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+}
+
+.hero h1{
+  font-size:52px;
+}
+
+.hero p{
+  margin:20px 0;
+  font-size:18px;
+}
+
+/* SECTIONS */
+.section{
+  padding:70px 60px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:32px;
+}
+
+/* CARDS */
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:18px;
+}
+
+/* FOOTER */
+.footer{
+  background:var(--primary);
+  color:white;
+  padding:50px;
+  text-align:center;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .navbar{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+}
+/* =========================
+   HRLN Animations
+   ========================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Apply animations */
+.hero h1 {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero p {
+  animation: fadeInUp 1.3s ease forwards;
+}
+
+.btn {
+  animation: fadeInUp 1.6s ease forwards;
+}
+
+.card {
+  animation: fadeInUp 0.8s ease forwards;
+}
