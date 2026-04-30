@@ -27,7 +27,7 @@
 </header>
 
 <!-- HERO -->
-<section class="hero" style="height:50vh; background:url('https://picsum.photos/1600/900?travel,team') center/cover;">
+<section class="hero" >
   <div>
     <h1>About HRLN Tourism</h1>
     <p>Your trusted Andhra Pradesh travel partner</p>
@@ -89,7 +89,7 @@
   <div class="card-grid">
 
     <div class="card">
-      <img src="https://picsum.photos/300/300?person1">
+      <img src="me.jpeg">
       <div class="card-content">
         <h3>Harsha Vardhan</h3>
         <p>Founder</p>
@@ -97,7 +97,7 @@
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/300/300?person2">
+      <img src="rohit.jpeg">
       <div class="card-content">
         <h3>Rohit</h3>
         <p>Travel Consultant</p>
@@ -105,7 +105,7 @@
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/300/300?person3">
+      <img src="lokesh.jpeg">
       <div class="card-content">
         <h3>Lokesh</h3>
         <p>Tour Manager</p>
@@ -113,7 +113,7 @@
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/300/300?person4">
+      <img src="nithin.jpeg">
       <div class="card-content">
         <h3>Nithin</h3>
         <p>Tech Manager</p>
@@ -135,6 +135,29 @@
     <p><strong>2026:</strong> Growing as a trusted travel brand</p>
   </div>
 </section>
+<script>
+
+  const images = [
+    "fimg3.webp",
+    "img1.webp",
+    "img2.webp",
+    "img3.webp",
+    "img4.webp",
+    "img5.webp",
+    "img6.webp",
+    "img7.webp",
+    "img8.webp",
+    "img9.webp",
+    
+  ];
+  
+
+  const hero = document.querySelector(".hero");
+
+  const randomImage = images[Math.floor(Math.random() * images.length)];
+
+  hero.style.background = `url('${randomImage}') center/cover no-repeat`;
+</script>
 
 
 
