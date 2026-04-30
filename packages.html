@@ -27,7 +27,7 @@
 </header>
 
 <!-- HERO -->
-<section class="hero" style="height:60vh; background:url('https://picsum.photos/1600/900?travel,india') center/cover;">
+<section class="hero">
   <div>
     <h1>Tour Packages</h1>
     <p>Carefully curated Andhra Pradesh experiences</p>
@@ -42,7 +42,7 @@
 
     <!-- PACKAGE 1 -->
     <div class="card">
-      <img src="https://picsum.photos/400/300?tirupati">
+      <img src="https://t3.ftcdn.net/jpg/16/51/53/18/360_F_1651531843_s7rf5p07Jwqd5L23T5GrUHGMK43j3SD4.jpg">
       <div class="card-content">
         <h3>Tirupati Darshan</h3>
         <p>2 Days • Hotel + Transport</p>
@@ -53,7 +53,7 @@
 
     <!-- PACKAGE 2 -->
     <div class="card">
-      <img src="https://picsum.photos/400/300?vizag,beach">
+      <img src="https://www.shutterstock.com/image-photo/view-visakhapatnam-dolphins-nose-visakha-260nw-1095079250.jpg">
       <div class="card-content">
         <h3>Vizag Beach Tour</h3>
         <p>3 Days • Hotel + Sightseeing</p>
@@ -64,9 +64,9 @@
 
     <!-- PACKAGE 3 -->
     <div class="card">
-      <img src="https://picsum.photos/400/300?araku,valley">
+      <img src="https://media.istockphoto.com/id/1351964928/photo/araku-valley-visakhapatnam-andhra-pradesh-india.jpg?s=612x612&w=0&k=20&c=Mev1sG0qcWTCqzhoOaoALYrQFZnVHhqDif7CF4xfEhE=">
       <div class="card-content">
-        <h3>Araku Valley Escape</h3>
+        <h3>Araku Valley</h3>
         <p>2 Days • Nature + Stay</p>
         <p><strong>₹8,000</strong></p>
         <button class="btn">Book Now</button>
@@ -75,9 +75,9 @@
 
     <!-- PACKAGE 4 -->
     <div class="card">
-      <img src="https://picsum.photos/400/300?srisailam">
+      <img src="https://images.pexels.com/videos/28183033/srisailam-dam-28183033.jpeg">
       <div class="card-content">
-        <h3>Srisailam Spiritual Trip</h3>
+        <h3>Srisailam Trip</h3>
         <p>2 Days • Temple Visit</p>
         <p><strong>₹6,500</strong></p>
         <button class="btn">Book Now</button>
@@ -86,7 +86,7 @@
 
     <!-- PACKAGE 5 -->
     <div class="card">
-      <img src="https://picsum.photos/400/300?borra,caves">
+      <img src="https://thelazytravel.com/wp-content/uploads/2019/03/Borra-Caves-Araku-Valley-Vizag-AndhraPradesh4.jpg">
       <div class="card-content">
         <h3>Borra Caves Adventure</h3>
         <p>1 Day • Adventure Trip</p>
@@ -97,7 +97,7 @@
 
     <!-- PACKAGE 6 -->
     <div class="card">
-      <img src="https://picsum.photos/400/300?godavari,river">
+      <img src="https://www.aptourismpapikondalu.com/images/assets/rajahmundry_to_sirivaka_cottages_2_days_tour.jpg">
       <div class="card-content">
         <h3>Papikondalu Cruise</h3>
         <p>2 Days • River Experience</p>
@@ -115,6 +115,30 @@
   <p>We design trips based on your needs</p>
   <button class="btn">Request Now</button>
 </section>
+<script>
+
+  const images = [
+    "fimg3.webp",
+    "img1.webp",
+    "img2.webp",
+    "img3.webp",
+    "img4.webp",
+    "img5.webp",
+    "img6.webp",
+    "img7.webp",
+    "img8.webp",
+    "img9.webp",
+    
+  ];
+  
+
+  const hero = document.querySelector(".hero");
+
+  const randomImage = images[Math.floor(Math.random() * images.length)];
+
+  hero.style.background = `url('${randomImage}') center/cover no-repeat`;
+</script>
+
 
 
 </body>
