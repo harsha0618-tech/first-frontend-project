@@ -26,7 +26,7 @@
 </header>
 
 <!-- HERO -->
-<section class="hero" style="height:60vh; background:url('https://picsum.photos/1600/900?india,travel') center/cover;">
+<section class="hero" >
   <div>
     <h1>Explore Destinations</h1>
     <p>Discover the best of Andhra Pradesh</p>
@@ -40,7 +40,7 @@
   <div class="card-grid">
 
     <div class="card">
-      <img src="https://picsum.photos/400/300?tirupati">
+      <img src="https://th.bing.com/th/id/R.73f84a113ccc25cd0da6037ed728995d?rik=Dn4291HkF%2bXAlA&riu=http%3a%2f%2ffamouswonders.com%2fwp-content%2fuploads%2f2009%2f03%2ftirumala-temple.jpg&ehk=rAQcx197qXnFBXH68SUD7BgFzWMitotCa%2fYf29UEOcM%3d&risl=&pid=ImgRaw&r=0">
       <div class="card-content">
         <h3>Tirupati</h3>
         <p>Lord Venkateswara Temple</p>
@@ -48,7 +48,7 @@
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/400/300?srisailam">
+      <img src="https://4.bp.blogspot.com/-QRuDEqwjpPs/W8M3PEgKUEI/AAAAAAABM7M/3u8OcUuLy9QIMeT5UZlX8rjRtrnPa8mTwCEwYBhgL/s1600/2018-04-12.jpg">
       <div class="card-content">
         <h3>Srisailam</h3>
         <p>Jyotirlinga in Nallamala hills</p>
@@ -56,7 +56,7 @@
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/400/300?vijayawada,temple">
+      <img src="https://vijayawadatourism.com/images/tourist-places/kanaka-durga-temple-vijayawada/kanaka-durga-temple-vijayawada-india-tourism-history.jpg">
       <div class="card-content">
         <h3>Vijayawada</h3>
         <p>Kanaka Durga Temple</p>
@@ -73,7 +73,7 @@
   <div class="card-grid">
 
     <div class="card">
-      <img src="https://picsum.photos/400/300?vizag,beach">
+      <img src="https://www.treebo.com/blog/wp-content/uploads/2025/06/Historic-Significance-2-1024x675.jpg">
       <div class="card-content">
         <h3>RK Beach</h3>
         <p>Heart of Visakhapatnam</p>
@@ -81,7 +81,7 @@
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/400/300?rushikonda">
+      <img src="https://www.shutterstock.com/shutterstock/videos/3545653521/thumb/11.jpg?ip=x480">
       <div class="card-content">
         <h3>Rushikonda</h3>
         <p>Clean & scenic beach</p>
@@ -89,7 +89,7 @@
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/400/300?yarada">
+      <img src="https://thumbs.dreamstime.com/b/yarada-beach-sunny-day-andhra-pradesh-close-to-visakhapatnam-183669376.jpg">
       <div class="card-content">
         <h3>Yarada Beach</h3>
         <p>Hidden coastal gem</p>
@@ -106,7 +106,7 @@
   <div class="card-grid">
 
     <div class="card">
-      <img src="https://picsum.photos/400/300?araku">
+      <img src="https://travellerkaka.com/wp-content/uploads/2024/08/Untitled-design-6-9-1024x536.png">
       <div class="card-content">
         <h3>Araku Valley</h3>
         <p>Coffee plantations & valleys</p>
@@ -114,7 +114,7 @@
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/400/300?lambasingi">
+      <img src="https://monomousumi.com/wp-content/uploads/kash.jpg">
       <div class="card-content">
         <h3>Lambasingi</h3>
         <p>Cool climate & fog</p>
@@ -122,7 +122,7 @@
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/400/300?borra,caves">
+      <img src="https://s7ap1.scene7.com/is/image/incredibleindia/borra-caves-visakhapatnam-andhra-pradesh-3-attr-hero?qlt=82&ts=1742150008705">
       <div class="card-content">
         <h3>Borra Caves</h3>
         <p>Natural limestone formations</p>
@@ -138,6 +138,173 @@
   <p>Explore Andhra Pradesh with HRLN Tourism</p>
   <button class="btn">View Packages</button>
 </section>
+<!-- POPUP -->
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup-box">
+    <button class="popup-close" id="popupClose">&times;</button>
+    <img class="popup-img" id="popupImg" src="" alt="">
+    <div class="popup-body">
+      <h2 id="popupTitle"></h2>
+      <p class="popup-subtitle" id="popupSubtitle"></p>
+      <p class="popup-desc" id="popupDesc"></p>
+      <div class="popup-details" id="popupDetails"></div>
+    </div>
+  </div>
+</div>
+<script>
+
+
+  const images = [
+    "fimg3.webp",
+    "img1.webp",
+    "img2.webp",
+    "img3.webp",
+    "img4.webp",
+    "img5.webp",
+    "img6.webp",
+    "img7.webp",
+    "img8.webp",
+    "img9.webp",
+    
+  ];
+  
+
+  const hero = document.querySelector(".hero");
+
+  const randomImage = images[Math.floor(Math.random() * images.length)];
+
+  hero.style.background = `url('${randomImage}') center/cover no-repeat`;
+  // === POPUP DATA — edit this to control what shows in each popup ===
+const destinationData = {
+  "Tirupati": {
+    img: "https://th.bing.com/th/id/R.73f84a113ccc25cd0da6037ed728995d?rik=Dn4291HkF%2bXAlA&riu=http%3a%2f%2ffamouswonders.com%2fwp-content%2fuploads%2f2009%2f03%2ftirumala-temple.jpg&ehk=rAQcx197qXnFBXH68SUD7BgFzWMitotCa%2fYf29UEOcM%3d&risl=&pid=ImgRaw&r=0",
+    subtitle: "Lord Venkateswara Temple · Tirupati, AP",
+    desc: "One of the most visited pilgrimage sites in the world, the Tirumala Venkateswara Temple sits atop the seven hills of Tirupati. Millions of devotees visit each year to seek the blessings of Lord Venkateswara.",
+    details: [
+      { label: "Best Time", value: "Sep – Feb" },
+      { label: "Category", value: "Spiritual" },
+      { label: "Distance from Nellore", value: "~140 km" }
+    ]
+  },
+  "Srisailam": {
+    img: "https://4.bp.blogspot.com/-QRuDEqwjpPs/W8M3PEgKUEI/AAAAAAABM7M/3u8OcUuLy9QIMeT5UZlX8rjRtrnPa8mTwCEwYBhgL/s1600/2018-04-12.jpg",
+    subtitle: "Mallikarjuna Jyotirlinga · Srisailam, AP",
+    desc: "Nestled deep in the Nallamala forest hills along the Krishna river, Srisailam houses the sacred Mallikarjuna Jyotirlinga — one of the twelve Jyotirlingas of Lord Shiva. The surroundings offer stunning views and rich wildlife.",
+    details: [
+      { label: "Best Time", value: "Oct – Mar" },
+      { label: "Category", value: "Spiritual" },
+      { label: "Nearest City", value: "Kurnool" }
+    ]
+  },
+  "Vijayawada": {
+    img: "https://vijayawadatourism.com/images/tourist-places/kanaka-durga-temple-vijayawada/kanaka-durga-temple-vijayawada-india-tourism-history.jpg",
+    subtitle: "Kanaka Durga Temple · Vijayawada, AP",
+    desc: "Perched on the Indrakeeladri hill on the banks of the Krishna river, the Kanaka Durga Temple is one of the most powerful Shakti shrines in South India. The goddess is worshipped as the deity of power, wealth, and benevolence.",
+    details: [
+      { label: "Best Time", value: "Oct – Mar" },
+      { label: "Category", value: "Spiritual" },
+      { label: "Nearest Airport", value: "Vijayawada" }
+    ]
+  },
+  "RK Beach": {
+    img: "https://www.treebo.com/blog/wp-content/uploads/2025/06/Historic-Significance-2-1024x675.jpg",
+    subtitle: "Ramakrishna Beach · Visakhapatnam, AP",
+    desc: "The iconic RK Beach is the lifeline of Vizag. Stretching along the Bay of Bengal, it features the INS Kurusura Submarine Museum, the VUDA Park, and a vibrant promenade ideal for evening walks.",
+    details: [
+      { label: "Best Time", value: "Oct – Feb" },
+      { label: "Category", value: "Beach" },
+      { label: "City", value: "Visakhapatnam" }
+    ]
+  },
+  "Rushikonda": {
+    img: "https://www.shutterstock.com/shutterstock/videos/3545653521/thumb/11.jpg?ip=x480",
+    subtitle: "Rushikonda Beach · Vizag, AP",
+    desc: "One of the cleanest beaches in Andhra Pradesh, Rushikonda is popular for water sports like jet-skiing and surfing. The golden sands and clear waters make it a favourite getaway just outside Visakhapatnam.",
+    details: [
+      { label: "Best Time", value: "Nov – Feb" },
+      { label: "Category", value: "Beach" },
+      { label: "Water Sports", value: "Available" }
+    ]
+  },
+  "Yarada Beach": {
+    img: "https://thumbs.dreamstime.com/b/yarada-beach-sunny-day-andhra-pradesh-close-to-visakhapatnam-183669376.jpg",
+    subtitle: "Yarada Beach · Vizag, AP",
+    desc: "A hidden gem tucked between hills and sea, Yarada Beach is accessible by a scenic winding road. Its unspoiled charm, blue waters and quiet atmosphere make it perfect for those seeking solitude away from crowded tourist spots.",
+    details: [
+      { label: "Best Time", value: "Oct – Mar" },
+      { label: "Category", value: "Beach" },
+      { label: "Crowd Level", value: "Low" }
+    ]
+  },
+  "Araku Valley": {
+    img: "https://travellerkaka.com/wp-content/uploads/2024/08/Untitled-design-6-9-1024x536.png",
+    subtitle: "Araku Valley · Alluri Sitharama Raju District, AP",
+    desc: "Set at 900m altitude in the Eastern Ghats, Araku Valley is known for its lush coffee plantations, tribal culture, and the breathtaking Borra Caves nearby. The Kirandul toy train journey to Araku is an experience in itself.",
+    details: [
+      { label: "Best Time", value: "Oct – Feb" },
+      { label: "Category", value: "Hills & Nature" },
+      { label: "Altitude", value: "~900 m" }
+    ]
+  },
+  "Lambasingi": {
+    img: "https://monomousumi.com/wp-content/uploads/kash.jpg",
+    subtitle: "Lambasingi · Vizag District, AP",
+    desc: "Called the 'Kashmir of Andhra Pradesh', Lambasingi is a small hamlet at 1000m altitude famous for its cool climate, winter fog and strawberry farms. It is the only place in AP where temperatures can drop to near zero.",
+    details: [
+      { label: "Best Time", value: "Oct – Jan" },
+      { label: "Category", value: "Hills & Nature" },
+      { label: "Known For", value: "Fog & Cold" }
+    ]
+  },
+  "Borra Caves": {
+    img: "https://s7ap1.scene7.com/is/image/incredibleindia/borra-caves-visakhapatnam-andhra-pradesh-3-attr-hero?qlt=82&ts=1742150008705",
+    subtitle: "Borra Guhalu · Araku Valley, AP",
+    desc: "Discovered in 1807 by William King, Borra Caves are one of the largest caves in India. Formed over a million years ago, the stalactite and stalagmite formations inside create a natural spectacle lit by coloured lights.",
+    details: [
+      { label: "Best Time", value: "Oct – Mar" },
+      { label: "Category", value: "Hills & Nature" },
+      { label: "Depth", value: "~75 m" }
+    ]
+  }
+};
+
+// Attach click listeners to all cards
+document.querySelectorAll('.card').forEach(card => {
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', () => {
+    const name = card.querySelector('h3').textContent.trim();
+    const data = destinationData[name];
+    if (!data) return;
+
+    document.getElementById('popupImg').src = data.img;
+    document.getElementById('popupTitle').textContent = name;
+    document.getElementById('popupSubtitle').textContent = data.subtitle;
+    document.getElementById('popupDesc').textContent = data.desc;
+
+    // Build detail pills
+    const detailsEl = document.getElementById('popupDetails');
+    detailsEl.innerHTML = data.details.map(d =>
+      `<div class="popup-detail-item">${d.label}<span>${d.value}</span></div>`
+    ).join('');
+
+    document.getElementById('popupOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+// Close on X button or clicking outside the box
+document.getElementById('popupClose').addEventListener('click', closePopup);
+document.getElementById('popupOverlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('popupOverlay')) closePopup();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+
+function closePopup() {
+  document.getElementById('popupOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+</script>
 
 
 
