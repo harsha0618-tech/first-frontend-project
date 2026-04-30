@@ -20,7 +20,7 @@
   <div class="logo">HRLN Tourism</div>
   <nav class="nav-links">
     <a href="index.html">Home</a>
-    <a href="destinations.html">Destinations</a>
+    <a id="dest" href="destinations.html">Destinations</a>
     <a href="packages.html">Packages</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
@@ -28,8 +28,9 @@
   <button class="btn">Book Now</button>
 </header>
 
+
 <!-- HERO -->
-<section class="hero" style="background:url('https://picsum.photos/1600/900?andhra,beach') center/cover;">
+<section class="hero" >
   <div>
     <h1>Explore Andhra Pradesh</h1>
     <p>Temples • Beaches • Hills • Culture</p>
@@ -165,6 +166,32 @@
   <input type="email" placeholder="Enter your email" style="padding:10px; margin-top:10px;">
   <button class="btn">Subscribe</button>
 </section>
+<script>
+  
+
+  const images = [
+    "fimg3.webp",
+    "img1.webp",
+    "img2.webp",
+    "img3.webp",
+    "img4.webp",
+    "img5.webp",
+    "img6.webp",
+    "img7.webp",
+    "img8.webp",
+    "img9.webp",
+    
+  ];
+  
+
+  const hero = document.querySelector(".hero");
+
+  const randomImage = images[Math.floor(Math.random() * images.length)];
+
+  hero.style.background = `url('${randomImage}') center/cover no-repeat`;
+
+
+</script>
 
 
 
