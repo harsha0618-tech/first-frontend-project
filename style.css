@@ -84,7 +84,7 @@ h1,h2,h3{
 /* HERO */
 .hero{
   height:100vh;
-  background:url('https://picsum.photos/1600/900?travel') no-repeat center/cover;
+  
   display:flex;
   align-items:center;
   justify-content:center;
@@ -133,8 +133,9 @@ h1,h2,h3{
 
 .card img{
   width: 100%;
-  aspect-ratio: 3/4;  /* or whatever fits your design */
-  object-fit: cover;
+  height: 200px;       /* control size */
+  object-fit: contain; /* shows full image */
+  background: #eee;    /* optional: fills empty space */
 }
 .card-content{
   padding:18px;
@@ -158,6 +159,85 @@ h1,h2,h3{
   .hero h1{
     font-size:34px;
   }
+}
+/* === POPUP OVERLAY === */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+.popup-overlay.active {
+  display: flex;
+}
+
+/* === POPUP BOX — control size here === */
+.popup-box {
+  background: #fff;
+  border-radius: 12px;
+  width: 520px;          /* ← change width here */
+  max-width: 90vw;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #555;
+  line-height: 1;
+}
+.popup-close:hover { color: #000; }
+
+.popup-img {
+  width: 100%;
+  height: 220px;         /* ← change image height here */
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.popup-body {
+  padding: 24px;
+}
+.popup-body h2 {
+  margin: 0 0 8px;
+  font-family: 'Times new roman', serif;
+  font-size: 24px;
+}
+.popup-body .popup-subtitle {
+  color: #888;
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+.popup-body .popup-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+  margin: 0 0 16px;
+}
+.popup-body .popup-details {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+.popup-detail-item span {
+  display: block;
+  font-weight: 600;
+  color: #222;
+  font-size: 15px;
 }
 /* =========================
    HRLN Animations
