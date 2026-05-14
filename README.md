@@ -1,7 +1,7 @@
 # About Website :
 
 ### HRLN(Harsha,Rohit,Lokesh,Nithin):
-This is out team in making the website of HRLN tourism.
+This is our team in making the website of HRLN tourism.
 Here we came up with the idea of building a website which consists of HTMI,CSS and JavaSript only.
 It consists of top destinations of Andhrapradesh like spiritual places,nature and adventure,beaches which are the major attractions of AndhraPradesh along with 
 beatiful welcoming nature of people around.
