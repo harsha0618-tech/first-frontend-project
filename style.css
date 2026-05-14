@@ -2,6 +2,204 @@
    HRLN Tours & Travels CSS (style.css)
    ========================= */
 
+
+
+
+#loader{
+
+  position:fixed;
+  inset:0;
+
+  width:100%;
+  height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  overflow:hidden;
+
+  z-index:999999;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(13,27,42,0.92),
+    rgba(245,124,0,0.85)
+  ),
+
+  url('fimg3.webp') center/cover no-repeat;
+
+  transition:opacity 1s ease,
+  visibility 1s ease;
+
+}
+
+.loader-overlay{
+
+  position:absolute;
+  inset:0;
+
+  backdrop-filter:blur(4px);
+
+}
+
+.loader-content{
+
+  position:relative;
+
+  z-index:2;
+
+  text-align:center;
+
+  color:white;
+
+  animation:loaderFade 1.5s ease;
+
+}
+
+.loader-title{
+
+  font-size:64px;
+
+  font-family:'Playfair Display', serif;
+
+  margin-top:30px;
+
+  letter-spacing:2px;
+
+  text-shadow:0 5px 20px rgba(0,0,0,0.35);
+
+}
+
+.loader-subtitle{
+
+  margin-top:15px;
+
+  font-size:24px;
+
+  letter-spacing:4px;
+
+  text-transform:uppercase;
+
+  color:#FFE0B2;
+
+}
+
+.loader-circle{
+
+  width:120px;
+  height:120px;
+
+  margin:auto;
+
+  border-radius:50%;
+
+  border:5px solid rgba(255,255,255,0.2);
+
+  border-top:5px solid #fff;
+
+  animation:spin 1.2s linear infinite;
+
+  box-shadow:
+  0 0 30px rgba(255,255,255,0.25);
+
+}
+
+.loader-line{
+
+  width:220px;
+  height:5px;
+
+  margin:35px auto 0;
+
+  border-radius:999px;
+
+  overflow:hidden;
+
+  background:rgba(255,255,255,0.15);
+
+  position:relative;
+
+}
+
+.loader-line::before{
+
+  content:'';
+
+  position:absolute;
+
+  left:-40%;
+  top:0;
+
+  width:40%;
+  height:100%;
+
+  background:white;
+
+  animation:loadingBar 1.5s infinite ease;
+
+}
+
+.loader-hide{
+
+  opacity:0;
+  visibility:hidden;
+
+}
+
+@keyframes spin{
+
+  100%{
+    transform:rotate(360deg);
+  }
+
+}
+
+@keyframes loadingBar{
+
+  0%{
+    left:-40%;
+  }
+
+  100%{
+    left:100%;
+  }
+
+}
+
+@keyframes loaderFade{
+
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+@media(max-width:768px){
+
+  .loader-title{
+    font-size:38px;
+  }
+
+  .loader-subtitle{
+    font-size:16px;
+    letter-spacing:2px;
+  }
+
+  .loader-circle{
+    width:90px;
+    height:90px;
+  }
+
+}
+
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 
@@ -280,4 +478,342 @@ h1,h2,h3{
 
 .card {
   animation: fadeInUp 0.8s ease forwards;
+}
+
+    
+   .tp-wrap{
+  width:100%;
+  max-width:600px;
+
+  background:linear-gradient(
+    135deg,
+    #FFF3E0,
+    #FFE0B2
+  );
+
+  padding:30px;
+  border-radius:20px;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.12);
+
+  margin:auto;
+}
+ 
+    .tp-header {
+      margin-bottom: 1.5rem;
+    }
+ 
+    .tp-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+ 
+    .tp-title i {
+      font-size: 24px;
+      color: #b45309;
+    }
+ 
+    .tp-sub {
+      font-size: 14px;
+      color: #6b6b6b;
+    }
+ 
+    .tp-section {
+     background: #FFF4E6;
+      border: 1px solid #e2ddd5;
+      border-radius: 14px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+ 
+    .tp-section-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #888;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+ 
+    .tp-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+ 
+    .tp-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+ 
+    .tp-field label {
+      font-size: 14px;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+ 
+    .tp-field label i {
+      font-size: 16px;
+      color: #888;
+    }
+ 
+    .tp-field input[type=number] {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #1a1a1a;
+    background: #FFF4E6;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+ 
+    .tp-field input[type=number]:focus {
+      border-color: #b45309;
+     background: #FFF4E6;
+    }
+ 
+    .tp-field .hint {
+      font-size: 12px;
+      color: #aaa;
+    }
+ 
+    .prefix-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+ 
+    .prefix-wrap .sym {
+      position: absolute;
+      left: 11px;
+      font-size: 14px;
+      color: #888;
+      pointer-events: none;
+      z-index: 1;
+    }
+ 
+    .prefix-wrap input {
+      padding-left: 26px !important;
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #1a1a1a;
+      background: #fafafa;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+ 
+    .prefix-wrap input:focus {
+      border-color: #b45309;
+    background: #FFF4E6;
+    }
+ 
+    .prefix-wrap input[readonly] {
+      background: #FFF4E6;
+      color: #888;
+      cursor: not-allowed;
+    }
+ 
+    .tp-price-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+ 
+    .tp-price-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+ 
+    .tp-price-field label {
+      font-size: 14px;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+ 
+    .badge-half {
+      font-size: 11px;
+     background: #FFF4E6;
+      color: #92400e;
+      border-radius: 6px;
+      padding: 2px 7px;
+      font-weight: 600;
+    }
+ 
+    .breakdown {
+      background: #FFF4E6;
+      border: 1px solid #e2ddd5;
+      border-radius: 14px;
+      padding: 1.25rem;
+      margin-top: 1rem;
+    }
+ 
+    .breakdown-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: #888;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+ 
+    .breakdown-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid #e8e3db;
+      font-size: 14px;
+    }
+ 
+    .breakdown-line:last-child {
+      border-bottom: none;
+    }
+ 
+    .breakdown-line .label {
+      color: #666;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+ 
+    .breakdown-line .label i {
+      font-size: 15px;
+      color: #999;
+    }
+ 
+    .breakdown-line .amount {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+ 
+    .total-card {
+      margin-top: 1rem;
+   background: #FFF4E6;
+      border: 1.5px solid #d97706;
+      border-radius: 14px;
+      padding: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+ 
+    .total-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+ 
+    .total-label i {
+      font-size: 20px;
+      color: #b45309;
+    }
+ 
+    .per-person-tag {
+      display: inline-block;
+      font-size: 12px;
+      background: #dbeafe;
+      color: #1e40af;
+      border-radius: 6px;
+      padding: 3px 10px;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+ 
+    .total-amt {
+      font-size: 28px;
+      font-weight: 700;
+      color: #b45309;
+    }
+ 
+    .empty-state {
+      text-align: center;
+      padding: 1.5rem;
+      color: #bbb;
+      font-size: 14px;
+    }
+ 
+    .empty-state i {
+      font-size: 28px;
+      display: block;
+      margin-bottom: 8px;
+    }
+ 
+    @media (max-width: 480px) {
+      .tp-row,
+      .tp-price-row {
+        grid-template-columns: 1fr;
+      }
+      .total-amt {
+        font-size: 22px;
+      }
+    }
+    .tp-field input[type=text],
+.tp-field input[type=tel]{
+  width:100%;
+  padding:9px 12px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  font-size:15px;
+  background:#fafafa;
+  outline:none;
+}
+
+.tp-field input[type=text]:focus,
+.tp-field input[type=tel]:focus{
+  border-color:#b45309;
+ background: #FFF4E6;
+}
+.final-book-btn{
+
+  width:100%;
+  margin-top:20px;
+
+  padding:14px;
+
+  border:none;
+  border-radius:12px;
+
+  background:#F57C00;
+  color:white;
+
+  font-size:18px;
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.1s;
+
+}
+
+.final-book-btn:hover{
+
+  background:#E65100;
+  transform:translateY(-2px);
+
 }
