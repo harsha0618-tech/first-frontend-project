@@ -115,29 +115,423 @@
   <p>We design trips based on your needs</p>
   <button class="btn">Request Now</button>
 </section>
+<!-- BOOKING POPUP -->
+
+<div class="popup-overlay" id="bookingPopup">
+
+  <div class="popup-box">
+
+    <button class="popup-close" id="closePopup">
+      &times;
+    </button>
+
+    <div class="popup-body">
+
+      <h2 id="packageTitle">Package Booking</h2>
+
+      <div class="tp-wrap">
+
+        <div class="tp-section">
+
+          <p class="tp-section-label">
+            Group Size
+          </p>
+          <!-- CUSTOMER DETAILS -->
+
+<form class="tp-wrap" id="bookingForm">
+
+  <!-- CUSTOMER DETAILS -->
+
+  <div class="tp-section">
+
+    <p class="tp-section-label">
+      Customer Details
+    </p>
+
+    <div class="tp-row">
+
+      <div class="tp-field">
+
+        <label for="customerName">
+          Full Name
+        </label>
+
+        <input
+          type="text"
+          id="customerName"
+          placeholder="Enter your name"
+          required
+          minlength="3"
+        >
+
+      </div>
+
+      <div class="tp-field">
+
+        <label for="customerPhone">
+          Phone Number
+        </label>
+
+        <input
+          type="tel"
+          id="customerPhone"
+          placeholder="Enter phone number"
+          required
+          pattern="[0-9]{10}"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- GROUP SIZE -->
+
+  <div class="tp-section">
+
+    <p class="tp-section-label">
+      Group Size
+    </p>
+
+    <div class="tp-row">
+
+      <div class="tp-field">
+
+        <label>Adults</label>
+
+        <input
+          type="number"
+          id="adults"
+          min="1"
+          value="2"
+          required
+          oninput="calc()"
+        >
+
+      </div>
+
+      <div class="tp-field">
+
+        <label>Children</label>
+
+        <input
+          type="number"
+          id="children"
+          min="0"
+          value="1"
+          required
+          oninput="calc()"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- TRIP DURATION -->
+
+  <div class="tp-section">
+
+    <p class="tp-section-label">
+      Trip Duration
+    </p>
+
+    <div class="tp-row">
+
+      <div class="tp-field">
+
+        <label>Nights</label>
+
+        <input
+          type="number"
+          id="nights"
+          min="1"
+          value="2"
+          required
+          oninput="calc()"
+        >
+
+      </div>
+
+      <div class="tp-field">
+
+        <label>Days</label>
+
+        <input
+          type="number"
+          id="days"
+          min="1"
+          value="3"
+          required
+          oninput="calc()"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- PRICE BREAKDOWN -->
+
+  <div class="breakdown" id="breakdown">
+
+  </div>
+
+</form>
 <script>
 
-  const images = [
-    "fimg3.webp",
-    "img1.webp",
-    "img2.webp",
-    "img3.webp",
-    "img4.webp",
-    "img5.webp",
-    "img6.webp",
-    "img7.webp",
-    "img8.webp",
-    "img9.webp",
-    
-  ];
-  
+const images = [
+  "fimg3.webp",
+  "img1.webp",
+  "img2.webp",
+  "img3.webp",
+  "img4.webp",
+  "img5.webp",
+  "img6.webp",
+  "img7.webp",
+  "img8.webp",
+  "img9.webp",
+];
 
-  const hero = document.querySelector(".hero");
 
-  const randomImage = images[Math.floor(Math.random() * images.length)];
+// ============================
+// HERO IMAGE
+// ============================
 
-  hero.style.background = `url('${randomImage}') center/cover no-repeat`;
+const hero = document.querySelector(".hero");
+
+const randomImage =
+images[Math.floor(Math.random() * images.length)];
+
+hero.style.background =
+`url('${randomImage}') center/cover no-repeat`;
+
+
+// ============================
+// PACKAGE PRICES
+// ============================
+
+const packagePrices = {
+
+  "Tirupati Darshan": 5000,
+  "Vizag Beach Tour": 12000,
+  "Araku Valley": 8000,
+  "Srisailam Trip": 6500,
+  "Borra Caves Adventure": 3000,
+  "Papikondalu Cruise": 7500
+
+};
+
+let currentPrice = 0;
+
+
+// ============================
+// BOOK NOW BUTTONS
+// ============================
+
+document.querySelectorAll(".card").forEach(card => {
+
+  const btn = card.querySelector(".btn");
+
+  btn.addEventListener("click", () => {
+
+    const title =
+    card.querySelector("h3").textContent;
+
+    currentPrice = packagePrices[title];
+
+    document.getElementById("packageTitle")
+      .textContent = title;
+
+    document.getElementById("bookingPopup")
+      .classList.add("active");
+
+    calc();
+
+  });
+
+});
+
+
+// ============================
+// CLOSE POPUP
+// ============================
+
+document.getElementById("closePopup")
+.addEventListener("click", () => {
+
+  document.getElementById("bookingPopup")
+    .classList.remove("active");
+
+});
+
+
+// ============================
+// PRICE FORMATTER
+// ============================
+
+function fmt(n) {
+
+  return "₹" + n.toLocaleString("en-IN");
+
+}
+
+
+// ============================
+// CALCULATOR
+// ============================
+
+function calc() {
+
+  const adults =
+  parseInt(document.getElementById("adults").value) || 0;
+
+  const children =
+  parseInt(document.getElementById("children").value) || 0;
+
+  const days =
+  parseInt(document.getElementById("days").value) || 0;
+
+  const nights =
+  parseInt(document.getElementById("nights").value) || 0;
+
+
+  // ============================
+  // PRICING
+  // ============================
+
+  const adultCost =
+  adults * currentPrice;
+
+  const childCost =
+  children * (currentPrice * 0.5);
+
+  const dayCost =
+  days * (currentPrice * 0.6);
+
+  const nightCost =
+  nights * (currentPrice * 0.4);
+
+  const total =
+  adultCost +
+  childCost +
+  dayCost +
+  nightCost;
+
+
+  // ============================
+  // UPDATE UI
+  // ============================
+
+  document.getElementById("breakdown")
+  .innerHTML = `
+
+    <div class="total-card">
+
+      <div class="total-top">
+
+        <div class="total-label">
+          Total Package Cost
+        </div>
+
+        <div class="total-amt">
+          ${fmt(total)}
+        </div>
+
+      </div>
+
+      <button
+        class="final-book-btn"
+        type="submit">
+
+        Book Now
+
+      </button>
+
+    </div>
+
+  `;
+
+}
+
+
+// ============================
+// FORM SUBMIT
+// ============================
+
+document
+.getElementById("bookingForm")
+
+.addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  // VALIDATION CHECK
+
+  if(!this.checkValidity()){
+
+    this.reportValidity();
+
+    return;
+
+  }
+
+  // SUCCESS POPUP
+
+  document
+  .getElementById("successPopup")
+  .classList.add("active");
+
+
+  // REFRESH PAGE
+
+  setTimeout(() => {
+
+    location.reload();
+
+  }, 3000);
+
+});
+
+
+// INITIAL CALCULATION
+
+calc();
+
 </script>
+
+<!-- SUCCESS POPUP -->
+
+<div class="popup-overlay" id="successPopup">
+
+  <div class="popup-box">
+
+    <div class="popup-body" style="text-align:center;">
+
+      <h2>
+        🎉 Trip Booked Successfully
+      </h2>
+
+      <p style="margin-top:15px;">
+
+        Our team will contact you within
+        24 hours.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
 
 
 
