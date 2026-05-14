@@ -14,6 +14,27 @@
 </head>
 
 <body>
+  <div id="loader">
+
+  <div class="loader-overlay"></div>
+
+  <div class="loader-content">
+
+    <div class="loader-circle"></div>
+
+    <h1 class="loader-title">
+      Welcome to Andhra Pradesh
+    </h1>
+
+    <p class="loader-subtitle">
+      Rice Bowl of India
+    </p>
+
+    <div class="loader-line"></div>
+
+  </div>
+
+</div>
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -167,6 +188,17 @@
   <button class="btn">Subscribe</button>
 </section>
 <script>
+  window.addEventListener('load', () => {
+
+  const loader = document.getElementById('loader');
+
+  setTimeout(() => {
+
+    loader.classList.add('loader-hide');
+
+  }, 2500);
+
+});
   
 
   const images = [
