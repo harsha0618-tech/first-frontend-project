@@ -45,7 +45,7 @@
       <div class="card-content">
         <h3>Tirupati Darshan</h3>
         <p>2 Days • Hotel + Transport</p>
-        <p><strong>₹9,000</strong></p>
+        <p><strong>₹5,000</strong></p>
         <button class="btn">Book Now</button>
       </div>
     </div>
@@ -326,25 +326,30 @@
 <script>
 
 const images = [
-    "fimg3.webp",
-    "img1.webp",
-    "img2.webp",
-    "img3.webp",
-    "img4.webp",
-    "img5.webp",
-    "img6.webp",
-    "img7.webp",
-    "img8.webp",
-    "img9.webp",
-    
-  ];
-  
+  "fimg3.webp",
+  "img1.webp",
+  "img2.webp",
+  "img3.webp",
+  "img4.webp",
+  "img5.webp",
+  "img6.webp",
+  "img7.webp",
+  "img8.webp",
+  "img9.webp",
+];
 
-  const hero = document.querySelector(".hero");
 
-  const randomImage = images[Math.floor(Math.random() * images.length)];
+// ============================
+// HERO IMAGE
+// ============================
 
-  hero.style.background = `url('${randomImage}') center/cover no-repeat`;
+const hero = document.querySelector(".hero");
+
+const randomImage =
+images[Math.floor(Math.random() * images.length)];
+
+hero.style.background =
+`url('${randomImage}') center/cover no-repeat`;
 
 
 // ============================
@@ -353,16 +358,12 @@ const images = [
 
 const packagePrices = {
 
-  "Tirupati Darshan": 9000,
+  "Tirupati Darshan": 5000,
   "Vizag Beach Tour": 12000,
   "Araku Valley": 8000,
   "Srisailam Trip": 6500,
   "Borra Caves Adventure": 3000,
-  "Papikondalu Cruise": 7500,
-  "Godavari fields":6500,
-  "Lambasingi"=9500,
-  "Nellore":5500,
-  "Ananthapur":10500,
+  "Papikondalu Cruise": 7500
 
 };
 
