@@ -326,30 +326,25 @@
 <script>
 
 const images = [
-  "fimg3.webp",
-  "img1.webp",
-  "img2.webp",
-  "img3.webp",
-  "img4.webp",
-  "img5.webp",
-  "img6.webp",
-  "img7.webp",
-  "img8.webp",
-  "img9.webp",
-];
+    "fimg3.webp",
+    "img1.webp",
+    "img2.webp",
+    "img3.webp",
+    "img4.webp",
+    "img5.webp",
+    "img6.webp",
+    "img7.webp",
+    "img8.webp",
+    "img9.webp",
+    
+  ];
+  
 
+  const hero = document.querySelector(".hero");
 
-// ============================
-// HERO IMAGE
-// ============================
+  const randomImage = images[Math.floor(Math.random() * images.length)];
 
-const hero = document.querySelector(".hero");
-
-const randomImage =
-images[Math.floor(Math.random() * images.length)];
-
-hero.style.background =
-`url('${randomImage}') center/cover no-repeat`;
+  hero.style.background = `url('${randomImage}') center/cover no-repeat`;
 
 
 // ============================
