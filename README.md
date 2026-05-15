@@ -9,7 +9,11 @@ beatiful welcoming nature of people around.
 ### Team contribution:
 1.Harshavardhan:Major javaScript part and loading page along with the calculator(form for number of people and number of days).
 2.Lokesh:Designed about and packages pages.
+
+
 3.Rohit:Designed home,contact along with forms,destinations pages.
+
+
 4.Nithin:Made most of the CSS and UI/UX design part.
 
 ### Home Page:
