@@ -28,14 +28,7 @@ In the navigation bar section there exists a book now button when you click this
 ### Destinations :
 This page shows all the major destinations available in AndhraPradest 
 For example consider Tirupati:
-where major attraction is Tirupati temple where as there are many minor tourist attractions like 
-1.Kapilatheertham
-2.Talakona
-3.Sree Kalahasthi
-4.Kanipakam
-5.Rayalacheruvu
-6.Kalyani dam 
-etc...
+
 Here you can see all the famous destionations and their small description about place, best time to visit,nearest airports and cities.
 The discriptions will be visible like a flashcard popup when you click on the images of the destionations.
 For this we used javaScript to make it possible and CSS to define its dimensions and styling.
